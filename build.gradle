@@ -3,17 +3,24 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion androidVersion.compileSdkVersion
+    buildToolsVersion androidVersion.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion androidVersion.minSdkVersion
+        targetSdkVersion androidVersion.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), isApp: "false"]
+                includeCompileClasspath = true
+            }
+        }
     }
 
     buildTypes {
@@ -29,10 +36,13 @@ android {
 }
 
 dependencies {
+    implementation dps.appcompat
+    implementation dps.material
+    implementation dps.constraintlayout
+    testImplementation dps.junit
+    androidTestImplementation dps.ext_junit
+    androidTestImplementation dps.espresso_core
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.1.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation dps.arouter_api
+    annotationProcessor dps.arouter_compiler
 }
