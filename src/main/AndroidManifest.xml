@@ -2,4 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thughan.kotlin">
 
+    <application>
+        <activity
+            android:name=".firstline.MainActivity"
+            android:exported="true" />
+    </application>
+
 </manifest>
