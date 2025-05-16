@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.thughan.kotlin">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
         <activity
-            android:name=".firstline.MainActivity"
+            android:name="com.thughan.kotlin.firstline.MainActivity"
             android:exported="true" />
     </application>
 

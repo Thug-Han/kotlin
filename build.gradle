@@ -1,10 +1,11 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
+//    id 'kotlin-android-extensions'
 }
 
 android {
+    namespace "com.thughan.kotlin"
     compileSdkVersion androidVersion.compileSdkVersion
     buildToolsVersion androidVersion.buildToolsVersion
 
@@ -19,8 +20,8 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName(), isApp: "false"]
-                includeCompileClasspath = true
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+
             }
         }
     }
