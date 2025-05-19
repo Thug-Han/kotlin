@@ -3,7 +3,12 @@
 
     <application>
         <activity
-            android:name="com.thughan.kotlin.firstline.MainActivity"
+            android:name=".jetpack.compose.ComposeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.Evolution" />
+        <activity
+            android:name=".firstline.MainActivity"
             android:exported="true" />
     </application>
 
